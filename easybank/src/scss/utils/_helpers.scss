@@ -1,0 +1,14 @@
+@use "./variables" as *;
+
+.cta {
+    font-size: $fs-0;
+    font-weight: $fw-bold;
+    padding: 1em 2.5em;
+    border-radius: 100vw;
+    color: $c-neutral-100;
+    cursor: pointer !important;
+}
+
+.bg-brand {
+    background: $c-grad;
+}

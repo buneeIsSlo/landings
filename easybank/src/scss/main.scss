@@ -15,5 +15,12 @@ main {
 
 h1 {
     font-size: $fs-5;
-    font-weight: 300;
+    font-weight: $fw-light;
+    color: $c-blue;
+}
+
+p {
+    font-size: $fs-0;
+    font-weight: $fw-regular;
+    color: $c-neutral-700;
 }
