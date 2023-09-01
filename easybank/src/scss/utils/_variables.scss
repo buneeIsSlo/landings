@@ -9,7 +9,7 @@ $c-grad: linear-gradient(100deg, $c-green, $c-cyan);
 
 $fs--2: clamp(0.69rem, calc(0.69rem + 0.04vw), 0.72rem);
 $fs--1: clamp(0.83rem, calc(0.81rem + 0.1vw), 0.9rem);
-$fs-0: clamp(1rem, calc(0.96rem + 0.18vw), 1.13rem);
+$fs-0: clamp(0.96rem, calc(0.96rem + 0.18vw), 1rem);
 $fs-1: clamp(1.2rem, calc(1.14rem + 0.29vw), 1.41rem);
 $fs-2: clamp(1.44rem, calc(1.35rem + 0.45vw), 1.76rem);
 $fs-3: clamp(1.73rem, calc(1.59rem + 0.67vw), 2.2rem);

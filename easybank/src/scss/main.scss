@@ -6,6 +6,7 @@ body {
     font-family: "Public Sans", sans-serif;
     font-weight: $fw-regular;
     width: 100%;
+    background-color: $c-neutral-200;
 }
 
 main {
@@ -20,7 +21,8 @@ h1 {
 }
 
 p {
-    font-size: $fs-0;
+    font-size: 15px;
     font-weight: $fw-regular;
     color: $c-neutral-700;
+    line-height: 1.5;
 }

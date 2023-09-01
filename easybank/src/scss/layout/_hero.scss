@@ -1,8 +1,10 @@
-#hero {
+@use "../utils/" as *;
+
+.hero {
     position: relative;
 
     .container {
-        width: 100%;
+        padding-inline: 1rem;
     }
 
     .hero-pattern {
@@ -15,7 +17,9 @@
 
         img {
             width: 100%;
-            max-width: 100%;
+            max-width: min(100%, 768px);
+            display: block;
+            margin-inline: auto;
         }
     }
 
@@ -26,8 +30,7 @@
 
         img {
             display: block;
-            width: 88%;
-            max-width: 100%;
+            max-width: min(100%, 548px);
             margin: -65px auto;
         }
     }
@@ -35,5 +38,22 @@
     .hero-content {
         margin-top: 6rem;
         text-align: center;
+
+        h1 {
+            margin-bottom: 1.2rem;
+
+            @include breakpoint(md) {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        p {
+            margin-bottom: 2rem;
+            max-width: 530px;
+
+            @include breakpoint(md) {
+                margin-bottom: 2.4rem;
+            }
+        }
     }
 }
