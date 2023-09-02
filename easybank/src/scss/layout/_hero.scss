@@ -3,8 +3,14 @@
 .hero {
     position: relative;
 
-    .container {
+    &-container {
         padding-inline: 1rem;
+
+        @include breakpoint(lg) {
+            display: flex;
+            flex-direction: row-reverse;
+            outline: 2px solid red;
+        }
     }
 
     .hero-pattern {
@@ -14,6 +20,10 @@
         top: 2rem;
         right: 0;
         z-index: -1;
+
+        @include breakpoint(lg) {
+            display: none;
+        }
 
         img {
             width: 100%;
@@ -26,10 +36,16 @@
     .hero-image {
         display: block;
         width: 100%;
-        position: relative;
+
+        @include breakpoint(lg) {
+            flex: 1;
+            position: absolute;
+            top: 0;
+            left: 100px;
+        }
 
         img {
-            display: block;
+            // display: block;
             max-width: min(100%, 548px);
             margin: -65px auto;
         }
@@ -37,7 +53,13 @@
 
     .hero-content {
         margin-top: 6rem;
-        text-align: center;
+        // text-align: center;
+
+        @include breakpoint(lg) {
+            flex: 1;
+            align-items: start;
+            text-align: left;
+        }
 
         h1 {
             margin-bottom: 1.2rem;
