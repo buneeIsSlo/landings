@@ -1,4 +1,12 @@
 @use "./variables" as *;
+@use "./mixins" as *;
+
+.container {
+    @include breakpoint(lg) {
+        max-width: 90%;
+        margin-inline: auto;
+    }
+}
 
 .flex-group-col {
     display: flex;
