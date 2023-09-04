@@ -3,6 +3,11 @@
 .hero {
     position: relative;
     outline: 2px solid blue;
+    overflow: visible;
+
+    @include breakpoint(lg) {
+        height: 90vh;
+    }
 
     &-container {
         padding-inline: 1rem;
@@ -10,7 +15,7 @@
         @include breakpoint(lg) {
             display: flex;
             flex-direction: row-reverse;
-            // outline: 2px solid red;
+            height: 100%;
         }
     }
 
@@ -21,9 +26,13 @@
         top: 2rem;
         right: 0;
         z-index: -1;
+        overflow: hidden;
 
         @include breakpoint(lg) {
-            display: none;
+            // display: none;
+            // background-color: #404040;
+            top: 0;
+            // display: flex;
         }
 
         img {
@@ -31,19 +40,36 @@
             max-width: min(100%, 768px);
             display: block;
             margin-inline: auto;
+
+            @include breakpoint(lg) {
+                margin-top: -8rem;
+                margin-right: -24rem;
+                float: right;
+                max-width: min(100%, 80vw);
+            }
+
+            @include breakpoint(xlg) {
+                margin-top: -15rem;
+                margin-right: -22rem;
+                max-width: min(100%, 80vw);
+            }
         }
     }
 
     .hero-image {
         display: block;
         outline: 2px solid red;
+        pointer-events: none;
+        // z-index: -1;
+        // display: none;
 
         @include breakpoint(lg) {
-            width: fit-content !important;
+            flex: 1;
+            width: 50%;
             position: absolute;
             top: 0;
             right: 0;
-            // height: 700px;
+            height: 140vh;
             overflow: hidden;
         }
 
@@ -51,13 +77,12 @@
             display: block;
             max-width: min(100%, 548px);
             margin: -65px auto;
-            overflow: hidden;
 
             @include breakpoint(lg) {
-                display: inline;
                 float: right;
                 margin-right: -4rem;
-                max-width: min(100%, 40svw);
+                max-width: min(100%, 60svw);
+                // max-width: 55svw;
             }
         }
     }
@@ -67,9 +92,13 @@
         // text-align: center;
 
         @include breakpoint(lg) {
+            margin-top: 0;
             flex: 1;
             align-items: start;
+            align-self: center;
             text-align: left;
+
+            // background-color: salmon;
         }
 
         h1 {

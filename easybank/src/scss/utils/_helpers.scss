@@ -6,6 +6,10 @@
         max-width: 90%;
         margin-inline: auto;
     }
+
+    @include breakpoint(xlg) {
+        max-width: 80%;
+    }
 }
 
 .flex-group-col {
