@@ -1,0 +1,30 @@
+@use "../utils/" as *;
+
+.stats {
+    @include breakpoint(lg) {
+        height: 90vh;
+    }
+
+    &-header {
+        h2 {
+            font-size: $fs-4;
+        }
+    }
+
+    &-cards {
+        .stats-list {
+            grid-template-rows: repeat(4, 1fr);
+            grid-template-columns: repeat(1, 1fr);
+            outline: 2px solid blue;
+
+            @include breakpoint(lg) {
+                grid-template-rows: repeat(1, 1fr);
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .stats-item {
+            outline: 2px solid red;
+        }
+    }
+}

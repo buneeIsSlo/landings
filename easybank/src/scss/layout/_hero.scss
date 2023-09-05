@@ -2,7 +2,6 @@
 
 .hero {
     position: relative;
-    outline: 2px solid blue;
     overflow: visible;
 
     @include breakpoint(lg) {
@@ -42,8 +41,8 @@
             margin-inline: auto;
 
             @include breakpoint(lg) {
-                margin-top: -8rem;
-                margin-right: -24rem;
+                margin-top: -6rem;
+                margin-right: -18rem;
                 float: right;
                 max-width: min(100%, 80vw);
             }
@@ -58,10 +57,7 @@
 
     .hero-image {
         display: block;
-        outline: 2px solid red;
         pointer-events: none;
-        // z-index: -1;
-        // display: none;
 
         @include breakpoint(lg) {
             flex: 1;
@@ -69,7 +65,7 @@
             position: absolute;
             top: 0;
             right: 0;
-            height: 140vh;
+            height: 120vh;
             overflow: hidden;
         }
 
@@ -97,12 +93,11 @@
             align-items: start;
             align-self: center;
             text-align: left;
-
-            // background-color: salmon;
         }
 
         h1 {
             margin-bottom: 1.2rem;
+            font-size: $fs-5;
 
             @include breakpoint(md) {
                 margin-bottom: 1.5rem;
@@ -115,6 +110,10 @@
 
             @include breakpoint(md) {
                 margin-bottom: 2.4rem;
+            }
+
+            @include breakpoint(md) {
+                max-width: 42ch;
             }
         }
     }

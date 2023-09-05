@@ -12,10 +12,23 @@
     }
 }
 
+.stats-bg {
+    background-color: $c-neutral-300;
+}
+
+.heading {
+    font-weight: $fw-light;
+    color: $c-blue;
+}
+
 .flex-group-col {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.grid-flow {
+    display: grid;
 }
 
 .cta {

@@ -15,15 +15,14 @@ main {
     height: 100%;
 }
 
-h1 {
-    font-size: $fs-5;
-    font-weight: $fw-light;
-    color: $c-blue;
-}
-
 p {
     font-size: 15px;
     font-weight: $fw-regular;
     color: $c-neutral-700;
     line-height: 1.5;
+
+    @include breakpoint(lg) {
+        font-size: $fs-0;
+        line-height: 1.6;
+    }
 }
