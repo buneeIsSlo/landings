@@ -24,11 +24,15 @@
 .flex-group-col {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    // align-items: center;
 }
 
 .grid-flow {
     display: grid;
+}
+
+.gap-sm {
+    gap: 1em;
 }
 
 .cta {

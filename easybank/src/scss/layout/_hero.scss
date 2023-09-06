@@ -85,7 +85,7 @@
 
     .hero-content {
         margin-top: 6rem;
-        // text-align: center;
+        align-items: center;
 
         @include breakpoint(lg) {
             margin-top: 0;
@@ -107,6 +107,7 @@
         p {
             margin-bottom: 2rem;
             max-width: 530px;
+            text-align: center;
 
             @include breakpoint(md) {
                 margin-bottom: 2.4rem;
@@ -114,6 +115,7 @@
 
             @include breakpoint(md) {
                 max-width: 42ch;
+                text-align: left;
             }
         }
     }
