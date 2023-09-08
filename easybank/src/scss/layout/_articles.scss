@@ -1,20 +1,52 @@
 @use "../utils/" as *;
 
 .articles {
-    height: 100vh;
+    padding-block: 6em 4em;
+
+    @include breakpoint(lg) {
+        padding-block: 7em 5em;
+    }
 
     &-container {
-        padding-inline: 1rem;
+        padding-inline: 2rem;
+        gap: 2.2em;
+
+        @include breakpoint(lg) {
+            padding-inline: 0;
+            gap: 3em;
+        }
     }
 
     &-header {
         h2 {
             font-size: $fs-4;
+            text-align: center;
+
+            @include breakpoint(lg) {
+                text-align: left;
+            }
         }
     }
 
     &-cards {
         .articles-list {
+            grid-template-rows: repeat(4, 1fr);
+            grid-template-columns: 1fr;
+            max-width: 312px;
+            margin-inline: auto;
+
+            @include breakpoint(md) {
+                grid-template-rows: repeat(2, 1fr);
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 80%;
+            }
+
+            @include breakpoint(lg) {
+                grid-template-rows: 1fr;
+                grid-template-columns: repeat(4, 1fr);
+                max-width: none;
+            }
+
             .articles-item {
                 border-radius: 0.3rem;
                 overflow: hidden;
@@ -22,7 +54,10 @@
                 .articles-image {
                     width: 100%;
                     aspect-ratio: 1 / 0.6;
-                    // outline: 2px solid red;
+
+                    @include breakpoint(lg) {
+                        aspect-ratio: 1 / 0.8;
+                    }
 
                     img {
                         display: block;
@@ -38,7 +73,6 @@
                     padding-block: 1.6em 2.2em;
                     padding-inline: 1.5em;
                     background: $c-neutral-100;
-                    // outline: 2px solid blue;
                     gap: 0.4em;
 
                     span {
