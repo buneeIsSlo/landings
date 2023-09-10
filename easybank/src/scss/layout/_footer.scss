@@ -2,4 +2,53 @@
 
 .footer {
     background-color: $c-blue;
+
+    &-nav {
+        gap: 1.5rem;
+
+        .nav-socials {
+            gap: 1.5rem;
+
+            .logo {
+                margin-inline: auto;
+            }
+
+            .socials-list {
+                display: flex;
+                gap: 1rem;
+                justify-content: center;
+            }
+        }
+
+        .nav-routes {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+
+            .routes {
+                gap: 1em;
+
+                li {
+                    margin-inline: auto;
+                    a {
+                        font-size: $fs--1;
+                        color: $c-neutral-300;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &-cta {
+        .cta {
+            margin-inline: auto;
+        }
+
+        span {
+            font-size: $fs--1;
+            text-align: center;
+            color: $c-neutral-700;
+        }
+    }
 }
