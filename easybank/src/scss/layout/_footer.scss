@@ -1,13 +1,52 @@
 @use "../utils/" as *;
 
 .footer {
+    padding-block: 2rem;
     background-color: $c-blue;
+
+    @include breakpoint(lg) {
+        padding-block: 3rem;
+    }
+
+    &-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.8rem;
+
+        @include breakpoint(md) {
+            flex-direction: row;
+            justify-content: space-between;
+            width: 80%;
+            margin-inline: auto;
+        }
+
+        @include breakpoint(lg) {
+            width: auto;
+        }
+    }
 
     &-nav {
         gap: 1.5rem;
 
+        nav {
+            gap: 1.5rem;
+
+            @include breakpoint(md) {
+                gap: 3rem;
+                flex-direction: row;
+            }
+
+            @include breakpoint(lg) {
+                gap: 8rem;
+            }
+        }
+
         .nav-socials {
             gap: 1.5rem;
+
+            @include breakpoint(md) {
+                justify-content: space-between;
+            }
 
             .logo {
                 margin-inline: auto;
@@ -17,6 +56,10 @@
                 display: flex;
                 gap: 1rem;
                 justify-content: center;
+
+                .social:hover svg path {
+                    fill: $c-green;
+                }
             }
         }
 
@@ -25,15 +68,32 @@
             flex-direction: column;
             gap: 1em;
 
+            @include breakpoint(md) {
+                flex-direction: row;
+                gap: 3rem;
+            }
+
+            @include breakpoint(lg) {
+                gap: 8rem;
+            }
+
             .routes {
                 gap: 1em;
 
                 li {
                     margin-inline: auto;
+
+                    @include breakpoint(md) {
+                        margin-inline: 0;
+                    }
                     a {
                         font-size: $fs--1;
                         color: $c-neutral-300;
                         text-decoration: none;
+
+                        &:hover {
+                            color: $c-green;
+                        }
                     }
                 }
             }
@@ -41,6 +101,12 @@
     }
 
     &-cta {
+        gap: 1.5rem;
+
+        @include breakpoint(md) {
+            justify-content: space-between;
+        }
+
         .cta {
             margin-inline: auto;
         }
