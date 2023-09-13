@@ -52,3 +52,11 @@
 .bg-brand {
     background: $c-grad;
 }
+
+.hidden {
+    display: none;
+}
+
+.show-nav {
+    display: flex !important;
+}
