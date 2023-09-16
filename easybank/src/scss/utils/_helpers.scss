@@ -47,6 +47,11 @@
     &:hover {
         filter: brightness(110%);
     }
+
+    &:focus-visible {
+        outline: 3px dotted $c-blue;
+        outline-offset: 4px;
+    }
 }
 
 .bg-brand {

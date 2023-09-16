@@ -89,6 +89,12 @@
                         &:hover {
                             color: $c-green;
                         }
+
+                        &:focus-visible {
+                            color: $c-green;
+                            outline: 3px dotted $c-blue;
+                            outline-offset: 4px;
+                        }
                     }
 
                     p {

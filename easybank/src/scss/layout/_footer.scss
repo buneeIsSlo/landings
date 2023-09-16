@@ -50,6 +50,11 @@
 
             .logo {
                 margin-inline: auto;
+
+                &:focus-visible {
+                    outline: 3px dotted $c-green;
+                    outline-offset: 4px;
+                }
             }
 
             .socials-list {
@@ -57,8 +62,16 @@
                 gap: 1rem;
                 justify-content: center;
 
-                .social:hover svg path {
-                    fill: $c-green;
+                .social {
+                    &:hover svg path {
+                        fill: $c-green;
+                    }
+                    a {
+                        &:focus-visible {
+                            outline: 3px dotted $c-green;
+                            outline-offset: 4px;
+                        }
+                    }
                 }
             }
         }
@@ -94,6 +107,11 @@
                         &:hover {
                             color: $c-green;
                         }
+
+                        &:focus-visible {
+                            outline: 3px dotted $c-green;
+                            outline-offset: 4px;
+                        }
                     }
                 }
             }
@@ -109,6 +127,11 @@
 
         .cta {
             margin-inline: auto;
+
+            &:focus-visible {
+                outline: 3px dotted $c-green;
+                outline-offset: 4px;
+            }
         }
 
         span {

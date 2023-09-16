@@ -3,9 +3,11 @@
 .hero {
     position: relative;
     overflow: visible;
+    margin-bottom: 5rem;
 
     @include breakpoint(lg) {
         height: 90vh;
+        margin-bottom: 0;
     }
 
     &-container {
@@ -28,10 +30,7 @@
         overflow: hidden;
 
         @include breakpoint(lg) {
-            // display: none;
-            // background-color: #404040;
             top: 0;
-            // display: flex;
         }
 
         img {
