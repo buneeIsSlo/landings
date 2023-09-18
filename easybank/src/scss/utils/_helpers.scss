@@ -8,7 +8,7 @@
     }
 
     @include breakpoint(xlg) {
-        max-width: 80%;
+        max-width: min(80%, 1600px);
     }
 }
 

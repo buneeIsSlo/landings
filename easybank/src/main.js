@@ -11,6 +11,7 @@ navToggle.addEventListener("click", (e) => {
     closeIcon.classList.toggle("hidden");
     navMenu.classList.toggle("show-nav");
     backgroundOverlay.classList.toggle("hidden");
+    navToggle.setAttribute("aria-expanded", !backgroundOverlay.classList.contains("hidden"));
 })
 
 console.log("bunee!");
