@@ -1,10 +1,15 @@
 import "./scss/main.scss";
+import Lenis from "@studio-freight/lenis";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const navToggle = document.querySelector(".nav-toggle");
 const hamburgerIcon = document.querySelector(".hamburger");
 const closeIcon = document.querySelector(".close");
 const navMenu = document.querySelector(".nav-list");
 const backgroundOverlay = document.querySelector(".bg-overlay");
+const headings = Array.from(document.querySelectorAll(".heading"));
 
 navToggle.addEventListener("click", (e) => {
     hamburgerIcon.classList.toggle("hidden");
@@ -15,8 +20,7 @@ navToggle.addEventListener("click", (e) => {
 });
 
 const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+    duration: 0.9
 })
 
 lenis.on('scroll', (e) => {
@@ -28,6 +32,14 @@ function raf(time) {
     requestAnimationFrame(raf)
 }
 
-requestAnimationFrame(raf)
+requestAnimationFrame(raf);
+
+headings.forEach((heading) => {
+    gsap.to(heading, {
+        y: "10px",
+        duration: 1.2,
+        scrollTrigger: heading
+    })
+});
 
 console.log("bunee!");
