@@ -10,6 +10,7 @@ const closeIcon = document.querySelector(".close");
 const navMenu = document.querySelector(".nav-list");
 const backgroundOverlay = document.querySelector(".bg-overlay");
 const headings = Array.from(document.querySelectorAll(".heading"));
+const statCards = Array.from(document.querySelectorAll(".stats-item"));
 
 navToggle.addEventListener("click", (e) => {
     hamburgerIcon.classList.toggle("hidden");
@@ -23,9 +24,9 @@ const lenis = new Lenis({
     duration: 0.9
 })
 
-lenis.on('scroll', (e) => {
-    console.log(e)
-})
+// lenis.on('scroll', (e) => {
+//     console.log(e)
+// })
 
 function raf(time) {
     lenis.raf(time)
@@ -35,11 +36,46 @@ function raf(time) {
 requestAnimationFrame(raf);
 
 headings.forEach((heading) => {
-    gsap.to(heading, {
-        y: "10px",
-        duration: 1.2,
-        scrollTrigger: heading
-    })
+    gsap.fromTo(
+        heading,
+        {
+            opacity: 0,
+            y: 5
+        },
+        {
+            opacity: 1,
+            y: 0,
+            duration: 1.4,
+            scrollTrigger: {
+                trigger: heading,
+                markers: true,
+                start: "center bottom",
+            },
+            ease: "power2"
+        }
+    )
 });
+
+statCards.forEach((card, i) => {
+    gsap.fromTo(
+        card,
+        {
+            opacity: 0,
+            x: -20,
+        },
+        {
+            delay: 0.1 * i,
+            opacity: 1,
+            x: 0,
+            duration: 1.4,
+            scrollTrigger: {
+                trigger: card,
+                markers: true,
+                start: "center bottom",
+            },
+            ease: "power3.inOut"
+        }
+    )
+})
 
 console.log("bunee!");
