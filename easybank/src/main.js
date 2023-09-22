@@ -11,6 +11,7 @@ const navMenu = document.querySelector(".nav-list");
 const backgroundOverlay = document.querySelector(".bg-overlay");
 const headings = Array.from(document.querySelectorAll(".heading"));
 const statCards = Array.from(document.querySelectorAll(".stats-item"));
+const aritcles = Array.from(document.querySelectorAll(".articles-item"));
 
 navToggle.addEventListener("click", (e) => {
     hamburgerIcon.classList.toggle("hidden");
@@ -24,16 +25,40 @@ const lenis = new Lenis({
     duration: 0.9
 })
 
-// lenis.on('scroll', (e) => {
-//     console.log(e)
-// })
-
 function raf(time) {
     lenis.raf(time)
     requestAnimationFrame(raf)
 }
 
 requestAnimationFrame(raf);
+
+gsap.fromTo(
+    ".hero-image",
+    {
+        opacity: 0,
+        y: -50
+    },
+    {
+        opacity: 1,
+        y: 0,
+        duration: 1.2,
+        ease: "power3.inOut"
+    }
+)
+
+gsap.fromTo(
+    ".cta",
+    {
+        opacity: 0,
+        scale: 0.5
+    },
+    {
+        opacity: 1,
+        scale: 1,
+        duration: 1,
+        ease: "expo.out"
+    }
+)
 
 headings.forEach((heading) => {
     gsap.fromTo(
@@ -48,7 +73,6 @@ headings.forEach((heading) => {
             duration: 1.4,
             scrollTrigger: {
                 trigger: heading,
-                markers: true,
                 start: "center bottom",
             },
             ease: "power2"
@@ -70,12 +94,50 @@ statCards.forEach((card, i) => {
             duration: 1.4,
             scrollTrigger: {
                 trigger: card,
-                markers: true,
-                start: "center bottom",
+                start: "top bottom",
             },
-            ease: "power3.inOut"
+            ease: "power3.out"
         }
     )
-})
+});
+
+aritcles.forEach((article, i) => {
+    gsap.fromTo(
+        article,
+        {
+            opacity: 0,
+            x: -20,
+        },
+        {
+            delay: 0.15 * i,
+            opacity: 1,
+            x: 0,
+            duration: 1.4,
+            scrollTrigger: {
+                trigger: article,
+                start: "top bottom",
+            },
+            ease: "power3.out"
+        }
+    )
+});
+
+gsap.fromTo(
+    "footer",
+    {
+        opacity: 0,
+        scaleX: 0.9,
+    },
+    {
+        opacity: 1,
+        scaleX: 1,
+        duration: 1,
+        scrollTrigger: {
+            trigger: "footer",
+            start: "top bottom",
+        },
+        ease: "circ.out"
+    }
+)
 
 console.log("bunee!");
