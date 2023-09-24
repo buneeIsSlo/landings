@@ -21,6 +21,7 @@ navToggle.addEventListener("click", (e) => {
     navToggle.setAttribute("aria-expanded", !backgroundOverlay.classList.contains("hidden"));
 });
 
+/* Smooth scroll */
 const lenis = new Lenis({
     duration: 0.9
 })
@@ -32,6 +33,7 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
+/* Animate hero image */
 gsap.fromTo(
     ".hero-image",
     {
@@ -46,6 +48,7 @@ gsap.fromTo(
     }
 )
 
+/* Animate call to actions */
 gsap.fromTo(
     ".cta",
     {
@@ -60,6 +63,7 @@ gsap.fromTo(
     }
 )
 
+/* Animate headings */
 headings.forEach((heading) => {
     gsap.fromTo(
         heading,
@@ -80,6 +84,7 @@ headings.forEach((heading) => {
     )
 });
 
+/* Animate stats cards */
 statCards.forEach((card, i) => {
     gsap.fromTo(
         card,
@@ -101,6 +106,7 @@ statCards.forEach((card, i) => {
     )
 });
 
+/* Animate article cards */
 aritcles.forEach((article, i) => {
     gsap.fromTo(
         article,
@@ -122,6 +128,7 @@ aritcles.forEach((article, i) => {
     )
 });
 
+/* Animate footer */
 gsap.fromTo(
     "footer",
     {
